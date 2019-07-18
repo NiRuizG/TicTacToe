@@ -2,11 +2,11 @@
 function endGame(letter) //display winner of full game and clears tab
 {
     if (String(Number(winningBoxes[3].innerHTML)) > String(Number(winningBoxes[5].innerHTML)))
-        alert(`Winner: player X ${winningBoxes[3].innerHTML} / ${winningBoxes[5].innerHTML}`);
+        alert(`Winner: player X ${winningBoxes[3].innerHTML} / ${winningBoxes[5].innerHTML}!`);
     else if (String(Number(winningBoxes[3].innerHTML)) < String(Number(winningBoxes[5].innerHTML)))
-        alert(`Winner: player O ${winningBoxes[5].innerHTML} / ${winningBoxes[3].innerHTML}`);
+        alert(`Winner: player O ${winningBoxes[5].innerHTML} / ${winningBoxes[3].innerHTML}!`);
     else {
-        alert(`Draw: ${winningBoxes[3].innerHTML} / ${winningBoxes[5].innerHTML}`);
+        alert(`Draw: ${winningBoxes[3].innerHTML} / ${winningBoxes[5].innerHTML}!`);
     }
     clearTab();    
 }
