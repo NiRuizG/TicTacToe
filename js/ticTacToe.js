@@ -59,7 +59,7 @@ function changePlayer () {
     return document;
 }
 
-/* partie qui gère le jeu */
+/* game part */
 
 var tdElmts = document.getElementsByTagName("td");
 function checkHorizontal(letter, caseX)
@@ -72,6 +72,8 @@ function checkHorizontal(letter, caseX)
         return 1;
     return 0; 
 }
+
+    /* check all win possibilties */
 function checkVertical(letter, caseX)
 {
     let elmnt = [];
@@ -83,7 +85,8 @@ function checkVertical(letter, caseX)
         return 1;
     return 0;
 }
-function cherckDiagonal(letter, caseX)
+
+function checkDiagonal(letter, caseX)
 {
     if (caseX[0] === letter && caseX[4] === letter && caseX[8] === letter)
         return 1;
@@ -116,14 +119,15 @@ function checkWin(letter)
         i = i + 1;
         n = n + 1;
     }
-    if (checkHorizontal(letter, caseX) || checkVertical(letter, caseX) || cherckDiagonal(letter, caseX))
+    if (checkHorizontal(letter, caseX) || checkVertical(letter, caseX) || checkDiagonal(letter, caseX)) // if somebody won
         return 1;
-    if (checkDraw(caseX) === 1)
+    if (checkDraw(caseX) === 1) // if Draw
         return 2;
     return 0;
 }
 
-function clearTab()
+
+function clearTab() /* empty tab */
 {
     let i = 1;
     while (i <= 9) {
@@ -132,7 +136,7 @@ function clearTab()
     }
 }
 
-function updateScore(letter, winningBoxes, bol)
+function updateScore(letter, winningBoxes, bol) /* update score*/
 {
     if (bol != 1) {
         if (letter === 'X')
@@ -167,7 +171,7 @@ function rules(letter) {
 }
 
 var bol = 0;  //used to stop writing on cells while displaying winner
-function addXO(object)
+function addXO(object) // add X or O on cell
 {
     var letter;
     if (object.innerHTML === "" && bol === 0) {
