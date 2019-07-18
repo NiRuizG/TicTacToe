@@ -8,12 +8,13 @@ function endGame(letter) //display winner of full game and clears tab
     else {
         alert(`Draw: ${winningBoxes[3].innerHTML} / ${winningBoxes[5].innerHTML}!`);
     }
-    clearTab();    
+    clearTab();
+    bol = 1;    
 }
 
 /* countdown */
-var min = 2;
-var sec = 59;
+var min = 0;
+var sec = 3;
 var timeDigits = document.body.getElementsByTagName("span");
 var idTimeout;
 function countDown(min, sec, idInterval)
