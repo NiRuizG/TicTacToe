@@ -13,8 +13,8 @@ function endGame(letter) //display winner of full game and clears tab
 }
 
 /* countdown */
-var min = 0;
-var sec = 3;
+var min = 3;
+var sec = 0;
 var timeDigits = document.body.getElementsByTagName("span");
 var idTimeout;
 function countDown(min, sec, idInterval)
